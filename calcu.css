@@ -1,0 +1,109 @@
+.calculator {
+  display: grid;
+  grid-template-rows: minmax(100px, auto) repeat(5, 70px);
+  grid-template-columns: repeat(4, 70px);
+  justify-content: center;
+  background-color: #000; /* pure black background */
+  padding: 1.5rem;
+  border-radius: 20px;
+  gap: 0.8rem;
+  max-width: 320px; /* fits mobile screens */
+  margin: 2rem auto;
+}
+
+.output {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* keep numbers/lyrics at bottom */
+  align-items: flex-end;
+  word-break: break-all;
+
+  background-color: #111; /* dark box */
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+
+  height: 100px; /* fixed height */
+}
+  .curr-display {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.prev-display {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #888;
+}
+
+
+.calculator button {
+  border: none;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 12px; /* round buttons */
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Number buttons */
+.number {
+  background-color: #333;
+  color: white;
+}
+
+.number:hover {
+  background-color: #444;
+}
+
+/* Operation buttons (+, -, *, /, =) */
+.operation,
+.equal {
+  background-color: orange;
+  color: white;
+}
+
+.operation:hover,
+.equal:hover {
+  background-color: #ff9500;
+}
+
+/* AC and DEL */
+.clear,
+.delete {
+  background-color: #a5a5a5;
+  color: black;
+}
+
+.clear:hover,
+.delete:hover {
+  background-color: #bfbfbf;
+}
+
+/* Span 2 (wide buttons) */
+.span-2 {
+  grid-column: span 2;
+  border-radius: 40px; /* pill-shaped */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  text-align: center;
+}
